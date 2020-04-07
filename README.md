@@ -1,6 +1,6 @@
 # CSS Table Of Content
 
-Create a table of content from your comments.
+Create a table of contents from your comments using markdown-like comments (`## Heading 2`).
 
 ## Options
 

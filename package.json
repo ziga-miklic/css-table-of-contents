@@ -1,7 +1,7 @@
 {
   "name": "csstoc",
   "version": "1.0.0",
-  "description": "Generate table of contents for your CSS files",
+  "description": "Create a table of contents from your comments",
   "main": "index.js",
   "homepage": "https://github.com/ziga-miklic/csstoc",
   "repository": {
