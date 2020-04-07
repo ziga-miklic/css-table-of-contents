@@ -13,3 +13,48 @@ Create a table of content from your comments.
 | suffix     | string             | `'\n*/\n\n\n'`        | Text that is added after the TOC list, if `isOnly` is `false`.                                  |
 | suffixOnly | string             | `'\n*/'`              | Text that is added after the TOC list, if `isOnly` is `true`.                                   |
 | h1 - h5    | function           | `h1()` - `h5()`       | Function with formatting for each heading type. The first parameter is the unchanged line text. |
+
+## Example
+
+### app.js
+```js
+const toc = require('./index');
+const fs = require('fs');
+
+const code = fs.readFileSync('./css/main.css').toString();
+
+toc({
+  code,
+  isOnly: true,
+});
+```
+
+### core.css
+```css
+/* # Components */
+
+/* ## Card */
+
+.card { }
+
+/* ### Card default */
+
+.card--default { }
+
+/* ### Card compact */
+
+.card--compact { }
+```
+
+### Result
+
+```
+/*
+* Table of contents
+*
+*
+* COMPONENTS
+* Card
+*   Card compact
+*/
+```
