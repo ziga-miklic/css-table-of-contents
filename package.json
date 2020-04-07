@@ -1,5 +1,5 @@
 {
-  "name": "csstoc",
+  "name": "css-table-of-contents",
   "version": "1.0.0",
   "description": "Create a table of contents from your comments",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "url": "git+https://github.com/ziga-miklic/csstoc.git"
   },
   "bugs": {
-    "url": "https://github.com/ziga-miklic/csstoc/issues"
+    "url": "https://github.com/ziga-miklic/css-table-of-contents/issues"
   },
   "keywords": [
     "TOC",
