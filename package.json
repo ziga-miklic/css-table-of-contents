@@ -2,7 +2,7 @@
   "name": "css-table-of-contents",
   "version": "1.0.2",
   "description": "Create a table of contents from your comments",
-  "main": "dist/toc.js",
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],
