@@ -95,6 +95,8 @@ toc({
 
 ### Numeric Example
 
+This examples shows a numeric list without indentation.
+
 ```js
 const toc = require('css-table-of-contents');
 const fs = require('fs');
@@ -104,6 +106,7 @@ const code = fs.readFileSync('./app.css').toString();
 toc({
   code,
   isShowNumbers: true,
+  indentSize: 0,
   isOnly: true,
 });
 ```
@@ -117,8 +120,8 @@ toc({
 *
 * 1.COMPONENTS
 * 1.1.Card
-*   1.1.1.Card default
-*   1.1.2.Card compact
+* 1.1.1.Card default
+* 1.1.2.Card compact
 *
 * 2.HELPERS
 * 2.1.Margins
