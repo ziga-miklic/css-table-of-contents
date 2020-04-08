@@ -1,6 +1,6 @@
 {
   "name": "css-table-of-contents",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Create a table of contents from your comments",
   "main": "dist/index.js",
   "files": [
