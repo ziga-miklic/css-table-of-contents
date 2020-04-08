@@ -1,9 +1,13 @@
-const headingCounters = [0, 0, 0, 0, 0];
+let headingCounters = [0, 0, 0, 0, 0];
 
 function resetSubheadings(level) {
   for (let i = level; i < headingCounters.length; i += 1) {
     headingCounters[i] = 0;
   }
+}
+
+function resetHeadingCount() {
+  headingCounters = [0, 0, 0, 0, 0];
 }
 
 function increaseHeadingCount(level) {
@@ -26,4 +30,5 @@ module.exports = {
   getHeadingNumberFormat,
   increaseHeadingCount,
   getHeadingCount,
+  resetHeadingCount,
 };

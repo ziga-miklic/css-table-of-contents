@@ -1,5 +1,5 @@
 const rewire = require('rewire');
-const index = rewire('../index');
+const index = rewire('../src/index');
 
 const isComment = index.__get__('isComment');
 const getPrefix = index.__get__('getPrefix');

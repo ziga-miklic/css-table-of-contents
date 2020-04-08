@@ -1,6 +1,7 @@
 const css = require('css');
 const { format } = require('./format');
 const { DEFAULT_OPTIONS } = require('./defines');
+const { resetHeadingCount } = require('./numbering');
 
 function isComment({ type, comment = '' } = {}) {
   return type === 'comment' && comment.includes('#');
@@ -35,6 +36,7 @@ function getTOC({ code, options } = {}) {
 
   const commentRules = codeObject.stylesheet.rules.filter(isComment);
   const comments = commentRules.map(getCommentContent);
+  resetHeadingCount();
   const formatComment = (comment) => format({ comment, options });
   const toc = comments.map(formatComment).join('\n');
 
@@ -42,10 +44,10 @@ function getTOC({ code, options } = {}) {
 }
 
 function getOptions(userOptions) {
-  return Object.assign(
-    DEFAULT_OPTIONS,
-    userOptions,
-  );
+  return {
+    ...DEFAULT_OPTIONS,
+    ...userOptions,
+  };
 }
 
 function init({ code, ...userOptions } = {}) {

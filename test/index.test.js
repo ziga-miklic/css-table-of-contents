@@ -1,4 +1,4 @@
-const toc = require('../index');
+const toc = require('../src/index');
 
 describe('Main', () => {
   test('changed title, is only, custom h2', () => {
@@ -9,8 +9,8 @@ describe('Main', () => {
 
     const result = `/*
 * Testing code
-*
-*
+* 
+* 
 * TEST
 * test
 * --- test
@@ -20,7 +20,7 @@ describe('Main', () => {
       code,
       isOnly: true,
       title: 'Testing code',
-      h3: (line) => line.replace('###', '* ---'),
+      h3: ({ comment: line }) => line.replace('###', '* ---'),
     };
 
     expect(toc(params)).toBe(result);
@@ -36,9 +36,9 @@ describe('Main', () => {
 `;
 
     const result = `/*
-* Table of content
-*
-*
+* Table of contents
+* 
+* 
 * TEST 1
 * test 2
 *   test 3

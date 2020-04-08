@@ -14,14 +14,18 @@ function getCommentText(comment) {
 }
 
 function getHeadingFormat({ level, comment, options }) {
-  let formatted = options.linePrefix;
-  formatted += getIndent(level, options.indentSize, options.indentStart);
+  let prefix = options.linePrefix;
+  prefix += getIndent(level, options.indentSize, options.indentStart);
   if (options.isShowNumbers) {
-    formatted += getHeadingNumberFormat(level);
+    prefix += getHeadingNumberFormat(level);
   }
-  formatted += getCommentText(comment);
+  const text = getCommentText(comment);
 
-  return formatted;
+  if (text.length) {
+    return `${prefix}${text}`;
+  }
+
+  return '';
 }
 
 function h1({ comment = '', options }) {
