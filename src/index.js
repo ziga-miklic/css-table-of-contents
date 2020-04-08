@@ -1,13 +1,6 @@
 const css = require('css');
-const {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  format,
-  formatPrefix,
-} = require('./format');
+const { format } = require('./format');
+const { DEFAULT_OPTIONS } = require('./defines');
 
 function isComment({ type, comment = '' } = {}) {
   return type === 'comment' && comment.includes('#');
@@ -49,24 +42,6 @@ function getTOC({ code, options } = {}) {
 }
 
 function getOptions(userOptions) {
-  const DEFAULT_OPTIONS = {
-    title: 'Table of contents',
-    isOnly: false,
-    indentSize: 2,
-    indentStart: 3,
-    isShowNumbers: false,
-    isGap: true,
-    prefix: formatPrefix,
-    suffix: '\n*/\n\n\n',
-    linePrefix: '* ',
-    suffixOnly: '\n*/',
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-  };
-
   return Object.assign(
     DEFAULT_OPTIONS,
     userOptions,
