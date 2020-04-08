@@ -118,17 +118,17 @@ toc({
 * Table of contents
 *
 *
-* 1.COMPONENTS
-* 1.1.Card
-* 1.1.1.Card default
-* 1.1.2.Card compact
+* 1. COMPONENTS
+* 1.1. Card
+* 1.1.1. Card default
+* 1.1.2. Card compact
 *
-* 2.HELPERS
-* 2.1.Margins
-* 2.2.Paddings
+* 2. HELPERS
+* 2.1. Margins
+* 2.2. Paddings
 *
-* 3.WIDGETS
-* 3.1.Mini cart
-* 3.2.Tags
+* 3. WIDGETS
+* 3.1. Mini cart
+* 3.2. Tags
 */
 ```
