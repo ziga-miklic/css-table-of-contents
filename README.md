@@ -18,7 +18,7 @@ Create a table of contents from your comments using markdown-like comments (`## 
 
 ### app.js
 ```js
-const toc = require('./index');
+const toc = require('css-table-of-contents');
 const fs = require('fs');
 
 const code = fs.readFileSync('./css/main.css').toString();
