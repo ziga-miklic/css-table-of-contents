@@ -19,7 +19,7 @@ function increaseHeadingCount(level) {
 function getHeadingNumberFormat(level) {
   const counters = headingCounters.slice(0, level);
 
-  return `${counters.join('.')}.`;
+  return `${counters.join('.')}. `;
 }
 
 function getHeadingCount(level) {
