@@ -27,7 +27,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "through2": "^3.0.1",
     "css": "^2.2.1"
   },
   "devDependencies": {
