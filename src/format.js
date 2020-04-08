@@ -1,21 +1,53 @@
-function h1(comment = '') {
-  return comment.replace('# ', '* ').toUpperCase();
+const {
+  increaseHeadingCount,
+  getHeadingNumberFormat,
+  getHeadingCount,
+} = require('./numbering');
+
+function getIndent(level, size, startLevel) {
+  const times = Math.max(0, size * (level - startLevel + 1));
+  return ' '.repeat(times);
 }
 
-function h2(comment = '') {
-  return comment.replace('## ', '* ');
+function getCommentText(comment) {
+  return comment.replace(/#/g, '').trim();
 }
 
-function h3(comment = '') {
-  return comment.replace('### ', '*   ');
+function getHeadingFormat({ level, comment, options }) {
+  let formatted = options.linePrefix;
+  formatted += getIndent(level, options.indentSize, options.indentStart);
+  if (options.isShowNumbers) {
+    formatted += getHeadingNumberFormat(level);
+  }
+  formatted += getCommentText(comment);
+
+  return formatted;
 }
 
-function h4(comment = '') {
-  return comment.replace('#### ', '*     ');
+function h1({ comment = '', options }) {
+  let heading = getHeadingFormat({ level: 1, comment, options });
+
+  if (getHeadingCount(1) > 1 && options.isGap) {
+    heading = `${options.linePrefix}\n${heading}`;
+  }
+
+  return heading.toUpperCase();
 }
 
-function h5(comment = '') {
-  return comment.replace('##### ', '*       ');
+function h2({ comment = '', options }) {
+  return getHeadingFormat({ level: 2, comment, options });
+}
+
+function h3({ comment = '', options }) {
+  return getHeadingFormat({ level: 3, comment, options });
+}
+
+function h4({ comment = '', options }) {
+  return getHeadingFormat({ level: 4, comment, options });
+}
+
+function h5({ comment = '', options }) {
+  return getHeadingFormat({ level: 5, comment, options });
 }
 
 function getLevel(comment = '') {
@@ -30,18 +62,20 @@ function format({ comment, options } = {}) {
   if (level > 0 && level < 6) {
     const formatFunc = options[`h${level}`];
 
-    return formatFunc(comment);
+    increaseHeadingCount(level);
+
+    return formatFunc({ comment, options });
   }
 
   return comment;
 }
 
-function formatPrefix(title = null) {
+function formatPrefix(title = null, linePrefix) {
   if (title == null) {
     return '';
   }
 
-  return `/*\n* ${title}\n*\n*\n`;
+  return `/*\n${linePrefix}${title}\n${linePrefix}\n${linePrefix}\n`;
 }
 
 module.exports = {
