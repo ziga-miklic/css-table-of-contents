@@ -2,7 +2,10 @@
   "name": "css-table-of-contents",
   "version": "1.0.1",
   "description": "Create a table of contents from your comments",
-  "main": "index.js",
+  "main": "dist/toc.js",
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/ziga-miklic/csstoc",
   "repository": {
     "type": "git",
@@ -18,7 +21,8 @@
     "CSS"
   ],
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "babel src --out-dir dist"
   },
   "author": {
     "name": "ziga-miklic",
