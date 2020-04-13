@@ -1,6 +1,12 @@
 # CSS Table Of Contents
 
-Create a table of contents from your comments using markdown-like comments (`## Heading 2`).
+Create a table of contents from comments in CSS files using a markdown-like syntax (`## Heading 2`).
+
+## Install
+
+```
+npm i css-table-of-contents
+```
 
 ## Options
 
@@ -132,3 +138,7 @@ toc({
 * 3.2. Tags
 */
 ```
+
+## Gulp version
+
+The gulp version can be found [here](https://github.com/ziga-miklic/gulp-css-table-of-contents).
